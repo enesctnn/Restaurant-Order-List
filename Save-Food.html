@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.7">
+
+  <title>Siparişler</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/Save-food.css">
+  <link rel="stylesheet" href="styles/Order-List.css">
+  <link rel="stylesheet" href="styles/side-bar.css">
+</head>
+
+<body>
+  <nav class="side-bar">
+    <div class="background-div">
+      <a href="Save-Food.html" draggable="false"><img src="icons/homeicon.png" draggable="false"></a>
+      <a href="Order-List.html" draggable="false"><img src="icons/serve.png" draggable="false"></a>
+      <a href="List.html" draggable="false"><img src="icons/list.png" draggable="false"></a>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <header>
+      <h1 class="save-menu-header">Yiyecek Kayıt</h1>
+    </header>
+    <div class="add-food-container">
+      <input type="text" id="name" class="product" placeholder="Ürün Adı">
+      <input type="text" id="info" class="info" placeholder="Ürün Detayı">
+      <input type="number" id="price" class="price" placeholder="Ürün Fiyatı"
+        onkeydown="handleKeyboardEvent(event.key);">
+      <button class="js-save-food-button save-button" onclick="saveFood();">Ürünü Kaydet</button>
+    </div>
+
+    <div class="js-display-product display-container">
+
+    </div>
+  </main>
+  <script src="script/save-food.js"></script>
+</body>
+
+</html>

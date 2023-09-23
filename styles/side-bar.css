@@ -1,0 +1,28 @@
+.side-bar {
+  position: fixed;
+  left: 8px;
+  bottom: 800px;
+  top: 40px;
+}
+
+.background-div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  background: rgb(238, 174, 202);
+  background: linear-gradient(180deg, rgba(238, 174, 202, 1) 0%, rgba(171, 184, 225, 1) 40%, rgba(148, 187, 233, 1) 100%);
+  padding: 20px 8px;
+  border-radius: 10px 0px;
+}
+
+.side-bar a img {
+  margin-top: 20px;
+  width: 70px;
+  transition: width 0.15s, margin 0.15s;
+  user-select: none;
+}
+
+.side-bar a img:hover {
+  width: 60px;
+  margin: 25px 5px 5px 5px;
+}

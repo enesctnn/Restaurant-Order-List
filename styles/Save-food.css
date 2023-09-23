@@ -1,0 +1,127 @@
+.main-container {
+  background: rgb(238, 174, 202);
+  background: linear-gradient(180deg, rgba(238, 174, 202, 1) 0%, rgba(171, 184, 225, 1) 40%, rgba(148, 187, 233, 1) 100%);
+  min-width: 1000px;
+  position: fixed;
+  top: 40px;
+  bottom: 80px;
+  left: 102px;
+  right: 50px;
+  padding: 50px 10px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 40px;
+  overflow-y: auto;
+}
+
+.save-menu-header {
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 45%;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.main-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.main-container::-webkit-scrollbar-thumb {
+  background-color: rgb(20, 20, 20, 0.3);
+  border-radius: 6px;
+}
+
+.main-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.add-food-container,
+.display-container {
+  display: grid;
+  grid-template-columns: 300px 300px 200px 1fr;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 25px;
+}
+
+.display-container div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 6px;
+  border-radius: 4px;
+  outline: thin solid black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product,
+.info,
+.price {
+  font: inherit;
+  padding: 10px;
+  background-color: azure;
+  border: none;
+  border-radius: 4px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, .3);
+}
+
+.product:focus,
+.info:focus,
+.price:focus {
+  outline: 1px red solid;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.save-button,
+.delete-button {
+  font: inherit;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+}
+
+.save-button {
+  padding: 15px;
+  background-color: black;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, .3);
+  transition: padding 0.15s, margin 0.15s, background-color 0.15s, color 0.15s;
+}
+
+.save-button:hover {
+  background-color: rgb(240, 255, 255);
+  color: black;
+  padding: 20px;
+  margin: -5px;
+}
+
+.save-button:active {
+  background-color: white;
+  padding: 12px;
+  margin: -2px;
+}
+
+.delete-button {
+  padding: 10px 35px;
+  color: black;
+  background-color: darkred;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.delete-button:hover {
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,7 @@
+body {
+  font: 500 16px Roboto, Arial;
+  background-repeat: no-repeat;
+  padding: 500px 0;
+  background-color: rgb(20, 20, 20);
+  overflow: hidden;
+}
