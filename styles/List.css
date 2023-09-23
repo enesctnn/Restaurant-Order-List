@@ -40,6 +40,7 @@
   color: darkgreen;
   font: 700 40px Roboto, arial;
   text-decoration: 3px underline red;
+  user-select: none;
 }
 
 .date-description-span {
@@ -50,7 +51,6 @@
 
 .food-name-span {
   font: 700 25px Roboto, arial;
-
 }
 
 .info-span {
@@ -76,10 +76,12 @@
 
 .display-total-price {
   display: fixed;
-  left: 0;
+  left: 5px;
   top: 400px;
-  padding: 20px;
+  width: 70px;
+  padding: 10px;
   background-color: black;
+  border-radius: 4px;
   color: white;
   font: 500 20px Roboto, arial;
 }
