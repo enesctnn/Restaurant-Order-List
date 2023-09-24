@@ -9,7 +9,8 @@ function displayOrders() {
   totalOrderedInfo.forEach(function (totalOrderedObject, index) {
     const { name, price, info, date } = totalOrderedObject;
     const { day, month, year, hour, minute } = date;
-    displayElement.innerHTML += `<div class="details-of-order">
+    displayElement
+      .innerHTML += `<div class="details-of-order">
     <span class="price-span">${price}&#8378;</span>
     <span class="date-description-span">
     ${month}/${day}/${year} ${hour}:${minute}
