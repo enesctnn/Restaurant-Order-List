@@ -18,7 +18,7 @@ function displayOrders() {
     <span class="food-name-span">${name}</span>
     <span class="info-span">${info}</span>
     <button class="delete-button" onclick="deleteOrder(${index});">
-    Delete</button>
+    Sil</button>
     </div>`;
 
     total += Number(price);

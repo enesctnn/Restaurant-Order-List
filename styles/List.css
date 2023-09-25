@@ -1,7 +1,7 @@
 .display-order-details {
   position: fixed;
   top: 40px;
-  bottom: 200px;
+  bottom: 50px;
   left: 102px;
   right: 50px;
   padding: 50px 10px;
@@ -31,14 +31,15 @@
   font: 500 30px Roboto, Arial;
   margin-left: 80px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 150px 1fr 1fr 1fr 130px;
+  align-items: center;
   column-gap: 10px;
-  margin-bottom: 100px;
+  margin-bottom: 5px;
 }
 
 .price-span {
   color: darkgreen;
-  font: 700 40px Roboto, arial;
+  font: 700 30px Roboto, arial;
   text-decoration: 3px underline red;
   user-select: none;
 }
@@ -47,31 +48,35 @@
   color: red;
   text-decoration: underline;
   display: inline-block;
+  font-size: 20px;
+  user-select: none;
 }
 
-.food-name-span {
-  font: 700 25px Roboto, arial;
-}
-
+.food-name-span,
 .info-span {
-  font: 400 23px roboto, arial;
+  font: 700 15px Roboto, Arial;
+  text-decoration: underline;
 }
 
 .delete-button {
   border: none;
-  font: inherit;
+  font: 500 15px Roboto, Arial;
   border-radius: 8px;
   padding: 10px;
-  max-height: 60px;
-  max-width: 200px;
   background-color: darkred;
   cursor: pointer;
   color: white;
-  transition: background-color 0.15s;
+  transition: background-color 0.15s, margin 0.15s, padding 0.15s, opacity 0.15s;
 }
 
 .delete-button:hover {
   background-color: rgb(20, 20, 20);
+  padding: 13px;
+  margin: -3px;
+}
+
+.delete-button:active {
+  opacity: 0.8;
 }
 
 .display-total-price {

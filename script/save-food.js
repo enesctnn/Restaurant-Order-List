@@ -28,7 +28,7 @@ function displayFood() {
       .innerHTML += `<div>${name}</div>
     <div>${info}</div>
     <div>${price}&#8378;</div>
-    <button class="delete-button" onclick="deleteFromList(${index});">Delete</button>`;
+    <button class="delete-button" onclick="deleteFromList(${index});">Sil</button>`;
   });
   localStorage.setItem('savedFoodsListObject', JSON.stringify(savedFoodsListObject));
 }

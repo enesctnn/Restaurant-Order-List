@@ -56,7 +56,7 @@ function displayOrders() {
     const orderListObject = order;
     const { name, price } = orderListObject;
     displayOrdersElement.innerHTML += `<div class="order-details-container">
-    <div class="food-name">${name}</div> : <div>${price}&#8378;</div><button class="trash-button" style="font-size:35px; color:white;" onclick="deleteFromTotal(${index});"><i class="fa fa-trash-o"></i></button>
+    <div class="food-name">${name}</div><div>: ${price}&#8378;</div><button class="trash-button" style="font-size:35px; color:white;" onclick="deleteFromTotal(${index});"><i class="fa fa-trash-o"></i></button>
     </div>`;
   });
 }
