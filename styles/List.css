@@ -1,18 +1,19 @@
 .display-order-details {
   position: fixed;
   top: 40px;
-  bottom: 50px;
   left: 102px;
   right: 50px;
+  height: 500px;
   padding: 50px 10px;
   border: none;
   border-radius: 0 8px 0 8px;
-  min-width: 1050px;
+  min-width: max-content;
   background-color: rgb(255, 255, 160);
   overflow: auto;
 }
 
-.display-order-details::-webkit-scrollbar {
+.display-order-details::-webkit-scrollbar,
+.display-same-order-count::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
@@ -22,19 +23,25 @@
   border-radius: 6px;
 }
 
-.display-order-details::-webkit-scrollbar-track {
+.display-same-order-count::-webkit-scrollbar-thumb {
+  background-color: lightyellow;
+  border-radius: 6px;
+}
+
+.display-order-details::-webkit-scrollbar-track,
+.display-same-order-count::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: transparent;
 }
 
 .details-of-order {
   font: 500 30px Roboto, Arial;
-  margin-left: 80px;
+  padding: 0 20px;
   display: grid;
-  grid-template-columns: 150px 1fr 1fr 1fr 130px;
+  grid-template-columns: 100px 1fr 1fr 1fr 130px;
   align-items: center;
   column-gap: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .price-span {
@@ -42,6 +49,12 @@
   font: 700 30px Roboto, arial;
   text-decoration: 3px underline red;
   user-select: none;
+  transition: font-size 0.15s, margin 0.15s;
+}
+
+.price-span:hover {
+  font-size: 33px;
+  margin-bottom: -6px;
 }
 
 .date-description-span {
@@ -50,6 +63,7 @@
   display: inline-block;
   font-size: 20px;
   user-select: none;
+  white-space: nowrap;
 }
 
 .food-name-span,
@@ -89,4 +103,28 @@
   border-radius: 4px;
   color: white;
   font: 500 20px Roboto, arial;
+}
+
+.display-same-order-count {
+  position: relative;
+  bottom: -48px;
+  right: 42px;
+  height: 265px;
+  border-radius: 8px 8px 0 0;
+  min-width: 1093px;
+  background-color: brown;
+  overflow-y: scroll;
+  margin-left: 50px;
+  color: white;
+  padding: 10px;
+}
+
+.order-count-line {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  column-gap: 30px;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
 }

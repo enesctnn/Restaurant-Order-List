@@ -4,12 +4,12 @@ div[id="button-container"] {
   bottom: 240px;
   left: 102px;
   right: 50px;
-  padding: 50px 10px;
+  padding: 20px 10px;
   border: none;
   border-radius: 0 8px 0 8px;
   display: grid;
-  min-width: 1079px;
-  grid-template-columns: 1fr 1fr 1fr;
+  min-width: max-content;
+  grid-template-columns: 1fr 1fr;
   column-gap: 50px;
   row-gap: 30px;
   background: rgb(238, 174, 202);
@@ -37,11 +37,11 @@ div[id="button-container"]::-webkit-scrollbar-track {
 }
 
 .food-button {
-  font: 700 20px Roboto, arial;
+  font: 700 18px Roboto, arial;
   padding: 20px;
-  min-width: 300px;
-  min-height: 300px;
-  max-height: 350px;
+  min-width: 250px;
+  min-height: 250px;
+  max-height: 300px;
   border: none;
   border-radius: 4px;
   color: black;
@@ -81,14 +81,13 @@ div[id="button-container"]::-webkit-scrollbar-track {
   column-gap: 40px;
   row-gap: 30px;
   padding: 30px 50px;
-  overflow-x: auto;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .order-details-container {
   min-width: 250px;
   display: grid;
-  grid-template-columns: 2.5fr 1fr max-content;
+  grid-template-columns: 2.5fr 70px max-content;
   column-gap: 20px;
   align-items: center;
   justify-content: center;
@@ -106,7 +105,7 @@ div[id="button-container"]::-webkit-scrollbar-track {
 .food-name,
 .food-price {
   text-decoration: darkred 2px underline;
-  transition: font-size 0.15s;
+  transition: font-size 0.15s, margin 0.15s;
 }
 
 .food-price {
@@ -116,6 +115,7 @@ div[id="button-container"]::-webkit-scrollbar-track {
 .food-name:hover,
 .food-price:hover {
   font-size: 22px;
+  margin-bottom: -20px;
 }
 
 .trash-button {
@@ -124,25 +124,20 @@ div[id="button-container"]::-webkit-scrollbar-track {
   cursor: pointer;
   background-color: rgb(20, 20, 20);
   font-size: 30px;
-  padding: 10px;
+  padding: 5px 10px;
   color: white;
-  transition: opacity 0.5s, font-size 0.15s;
+  transition: padding 0.15s, margin 0.15s;
 }
 
 .trash-button:hover {
-  opacity: 0.8;
-  font-size: 40px;
+  padding: 7px 12px;
+  margin: -2px;
 }
 
-@media (max-width:1000px) {
-  div[id="button-container"] {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
 @media (min-width:1400px) {
   div[id="button-container"] {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .display-orders-container {
@@ -159,18 +154,18 @@ div[id="button-container"]::-webkit-scrollbar-track {
 
 @media (min-width:1800px) {
   div[id="button-container"] {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 @media (min-width:2200px) {
   div[id="button-container"] {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
 @media (min-width:2600px) {
   div[id="button-container"] {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }

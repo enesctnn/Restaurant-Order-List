@@ -18,9 +18,10 @@ function rebuildFoodList() {
 }
 
 const totalOrderedInfo = JSON.parse(localStorage.getItem('totalOrderedInfo')) || [];
-displayOrders();
 
 function handleFoodButtonClicks(name, price, info) {
+  countSameOrders(name, price);
+
   const date = new Date();
   const day = date.getDate();
   const month = date.getMonth();
@@ -37,29 +38,69 @@ function handleFoodButtonClicks(name, price, info) {
       year,
       hour,
       minute
-    }
+    },
+    count: 1
   });
   displayOrders();
 }
 
+const sameOrdersCount = JSON.parse(localStorage.getItem('sameOrdersCount')) || [];
+
+function countSameOrders(name, price) {
+  let isTrue = true;
+  sameOrdersCount.forEach(function (sameOrdersCountObject) {
+    const name1 = sameOrdersCountObject.name;
+    const price1 = sameOrdersCountObject.price;
+    if (name1 === name && price1 === price) {
+      isTrue = false;
+      sameOrdersCountObject.count++;
+    }
+  });
+  if (isTrue) {
+    sameOrdersCount.push({
+      name,
+      price,
+      count: 1
+    });
+  }
+
+}
+
 function deleteFromTotal(num) {
   localStorage.removeItem('totalOrderedInfo');
+  localStorage.removeItem('sameOrdersCount');
+  sameOrdersCount.forEach(function (sameOrdersCountObject, index) {
+    const { name } = sameOrdersCountObject;
+    if (name === totalOrderedInfo[num].name) {
+      if ((sameOrdersCountObject.count - 1) === 0) {
+        sameOrdersCount.splice(index, 1);
+      } else sameOrdersCountObject.count--;
+    }
+  });
+
   totalOrderedInfo.splice(num, 1);
   displayOrders();
 }
 
 function displayOrders() {
   localStorage.setItem('totalOrderedInfo', JSON.stringify(totalOrderedInfo));
+  localStorage.setItem('sameOrdersCount', JSON.stringify(sameOrdersCount));
   const displayOrdersElement = document.getElementById('display-orders-element');
   displayOrdersElement.innerHTML = ``;
   totalOrderedInfo.forEach(function (order, index) {
     const orderListObject = order;
     const { name, price } = orderListObject;
     displayOrdersElement.innerHTML += `<div class="order-details-container">
-    <div class="food-name">${name}</div><div>: ${price}&#8378;</div><button class="trash-button" style="font-size:35px; color:white;" onclick="deleteFromTotal(${index});"><i class="fa fa-trash-o"></i></button>
+    <div class="food-name">${name}</div><div class="food-price">: ${price}&#8378;</div><button class="trash-button" onclick="deleteFromTotal(${index});"><i class="fa fa-trash-o"></i></button>
     </div>`;
   });
+  console.log(sameOrdersCount);
+
 }
+
+localStorage.removeItem('totalOrderedInfo');
+
+displayOrders();
 
 setInterval(function () {
   location.reload();
