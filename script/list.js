@@ -40,7 +40,7 @@ function displaySameOrders() {
     .innerHTML = ``;
   sameOrdersCount.forEach(function (sameOrdersCountObject) {
     const { name, price, count } = sameOrdersCountObject;
-    totalOneByOne = Number(price * 100);
+    totalOneByOne += Number(price * 100);
     displayElement
       .innerHTML += `<div class="order-count-line"><div>Satış : ${name}</div> <div>Satış Adedi : ${count}</div> <div>Ürün Tane Fiyatı : ${price} &#8378;</div> <div>Toplam : ${totalOneByOne / 100}&#8378</div></div>`;
   });
